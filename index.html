@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preload" as="image" href="Body.jpeg">
+<title>Aiezad & Najihah</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins&family=Cinzel:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+:root{
+--teal:#6B1D2A;
+--light:#ecfeff;
+--vh: 100svh
+}
+
+body{
+margin:0;
+font-family:'Poppins', sans-serif;
+text-align:center;
+overflow-x:hidden;
+
+background-image:url('Cover.jpeg');
+background-size:cover;
+background-attachment:scroll;
+background-position:center;
+background-repeat:no-repeat;
+padding-bottom: 120px;
+min-height:100vh;
+position: relative;
+}
+
+html, body{
+touch-action:manipulation;
+max-width:100%;
+overflow-x:hidden;
+}
+
+
+input, textarea, select, button {
+  font-size: 16px;
+}
+
+
+*{
+-webkit-tap-highlight-color: transparent;
+box-sizing:border-box;
+}
+
+.couple2-text{
+    font-family:'Cinzel', serif;
+    font-size:25px;
+    font-weight:500;
+    line-height:1.5;
+    letter-spacing:0.5px;
+}
+
+h1{
+font-family:'Great Vibes', cursive;
+}
+
+h2{
+font-family:'Poppins', sans-serif;
+}
+
+
+/* FLOWER ANIMATION */
+
+.flower{
+position:absolute;
+top:-10px;
+animation:fall linear infinite;
+opacity:0.7;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(120svh);
+  }
+}
+
+html{
+-webkit-text-size-adjust:100%;
+}
+
+img{
+max-width:100%;
+height:auto;
+display:block;
+}
+/* COVER */
+
+#cover{
+position:fixed;
+width:100%;
+height: var(--vh);
+background-image:url('Body.jpeg');
+background-size:cover;
+background-attachment:scroll;
+background-position:center;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:999;
+opacity: 1;
+pointer-events: all;
+transition: opacity 0.8s ease;
+}
+
+
+#cover.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+
+.circle{
+width:160px;
+height:160px;
+transform: translateY(-95px);
+background:rgba(107, 29, 42, 0.75); /* maroon circle */
+border-radius:50%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+cursor:pointer;
+border:2px solid #6B1D2A; /* maroon border */
+animation: pulse 1.5s infinite;
+padding:10px;
+}
+
+.circle h2{
+    font-family:'Cinzel', serif;
+    font-size:clamp(18px, 4vw, 25px);
+    line-height:1;
+    text-align:center;
+    color:#FFFFFF;
+}
+
+
+.circle p{
+    font-size:10px;
+    letter-spacing:4px;
+    animation:blink 1.2s infinite;
+    color:#FFFFFF;
+}
+
+@keyframes pulse{
+0%{transform:translateY(-95px) scale(1);}
+50%{transform:translateY(-95px) scale(1.08);}
+100%{transform:translateY(-95px) scale(1);}
+}
+
+@keyframes blink{
+0%,100%{opacity:1;}
+50%{opacity:0.5;}
+}
+
+h1{
+color:var(--teal);
+font-family:Georgia;
+}
+
+/* CONTAINER */
+.fade{
+opacity:0;
+transform:translateY(30px) scale(0.98);
+transition:all 0.7s ease;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0) scale(1);
+}
+
+.container{
+padding:30px 15px 200px; /* IMPORTANT: bagi ruang lebih */
+width:100%;
+max-width:100%;
+margin:auto;
+background:rgba(107, 29, 42, 0.3);
+backdrop-filter:blur(2px);
+
+
+/* FIX UTAMA */
+min-height:calc(100vh + 120px);
+
+background:linear-gradient(
+    rgba(107,29,42,0.15),
+    rgba(107,29,42,0.15) 85%,
+    rgba(107,29,42,0)
+);
+}
+
+/* TIMER */
+
+.timer{
+display:flex;
+justify-content:center;
+gap:10px;
+margin:30px 0;
+}
+
+.box{
+background:var(--teal);
+color:white;
+padding:10px;
+border-radius:10px;
+width:65px;
+}
+
+/* NAVBAR */
+
+.navbar{
+position:fixed;
+bottom:15px;
+
+/* CHANGE INI */
+left:0;
+right:0;
+margin:auto;
+
+width:calc(100% - 30px); /* bagi space kiri kanan */
+max-width:400px;
+
+background:white;
+padding:15px 10px; /* kecikkan sikit */
+border-radius:40px;
+box-shadow:0 5px 20px rgba(0,0,0,0.2);
+
+display:flex;
+justify-content:space-around; /* elak overflow */
+gap:10px;
+
+z-index:100;
+}
+
+.nav-item{
+display:flex;
+flex-direction:column;
+align-items:center;
+font-size:11px;
+color:var(--teal);
+cursor:pointer;
+}
+
+.nav-item i{
+font-size:20px;
+margin-bottom:3px;
+}
+
+.nav-item:active{
+transform:scale(0.9);
+}
+
+.nav-item:hover{
+    color:#BE4B5F;
+    transform:translateY(-3px);
+    transition:0.2s;
+}
+
+/* MODAL */
+
+.modal{
+display:none;
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.6);
+justify-content:center;
+align-items:center;
+z-index:1000;
+}
+
+.modal-content{
+    background:white;
+    padding:25px 20px;
+    border-radius:15px;
+    width:85%;
+    max-width:350px;
+    position:relative;
+
+    max-height:calc(100vh - 40px);
+    overflow-y:auto;
+    -webkit-overflow-scrolling:touch;
+    overscroll-behavior:contain;
+}
+
+.modal-content.blur{
+  filter:blur(3px);
+}
+
+button{
+background:var(--teal);
+color:white;
+border:none;
+padding:10px 20px;
+border-radius:20px;
+cursor:pointer;
+}
+
+.hero *{
+color:#000000;
+margin-top:10px;
+margin-bottom:30px;
+}
+
+
+.bismillah{
+    color:#7f0404 !important;
+    font-size:25px;
+}
+
+.walimatulurus{
+color:var(--teal);
+}
+
+.container p{
+margin-top:0;
+}
+
+.container h2{
+color:var(--teal);
+}
+
+.container h3{
+margin-bottom:5px;
+}
+
+.couple{
+    font-family:'Cinzel', serif;
+    font-size:38px;
+    font-weight:600;
+    letter-spacing:1px;
+    margin:15px 0;
+}
+
+.couple span{
+    font-family:'Cinzel', serif;
+    font-size:30px;
+    font-weight:400;
+}
+
+.date{
+font-size:14px;
+margin-bottom:20px;
+}
+
+.info{
+margin-top:10px;
+}
+
+.rsvp-btn{
+margin-top:50px;
+}
+
+
+.rsvp-title{
+margin-bottom:20px;
+color:var(--teal);
+}
+
+.rsvp-form{
+text-align:left;
+padding:0 5px;
+}
+
+.rsvp-form label{
+font-size:13px;
+color:#555;
+display:block;
+margin-top:10px;
+margin-bottom:5px;
+}
+
+.rsvp-form input,
+.rsvp-form select{
+width:100%;
+padding:12px;
+border-radius:12px;
+border:1px solid #ddd;
+background:#f9f9f9;
+font-family:'Poppins', sans-serif;
+box-sizing:border-box; /* IMPORTANT */
+}
+
+.rsvp-form input:focus,
+.rsvp-form select:focus{
+outline:none;
+border:1px solid var(--teal);
+background:white;
+box-shadow:0 0 5px rgba(0,0,0,0.05);
+}
+
+.rsvp-submit{
+width:100%;
+margin-top:20px;
+padding:12px;
+border-radius:30px;
+font-weight:600;
+background:var(--teal);
+}
+
+#rsvpSuccess{
+  position:fixed;
+  bottom:120px;
+  left:50%;
+  transform:translate(-50%) scale(0.8);
+  z-index:2000;
+  width:auto;
+  max-width:320px;
+  padding:25px 20px;
+  text-align:center;
+  opacity:0;
+  transition:all 0.5s ease;
+}
+
+#rsvpSuccess.show{
+  opacity:1;
+  transform:translate(-50%) scale(1);
+}
+
+#rsvpSuccess p{
+font-size:14px;
+word-wrap:break-word;
+white-space:normal;
+}
+
+#rsvpSuccess i{
+font-size:45px;
+}
+
+#rsvpSuccess h3{
+margin:8px 0 5px;
+}
+
+#rsvpSuccess p{
+margin:0;
+}
+
+
+
+/* UCAPAN */
+
+.ucapan-title{
+margin-top:90px;
+}
+
+.ucapan-box{
+    background:rgba(107,29,42,0.3);
+    padding:25px;
+    border-radius:15px;
+    margin-top:10px;
+    border:1px solid rgba(255,255,255,0.3);
+}
+
+.ucapan-box input,
+.ucapan-box textarea{
+width:100%;
+box-sizing:border-box;
+padding:12px;
+margin-bottom:10px;
+border-radius:10px;
+border:1px solid rgba(255,255,255,0.3);
+background:rgba(255,255,255,0.1);
+color:white;
+}
+
+.ucapan-box input::placeholder,
+.ucapan-box textarea::placeholder{
+    color:#480210 !important;
+    opacity:1 !important;
+}
+
+.ucapan-box textarea{
+height:100px;
+}
+
+.ucapan-card{
+background:linear-gradient(135deg,#9333ea,#7e22ce);
+color:white;
+padding:15px;
+border-radius:15px;
+margin-bottom:10px;
+text-align:left;
+}
+
+.ucapan-card h4{
+margin:0;
+}
+
+.ucapan-card p{
+color:white;
+}
+
+.success-popup{
+position:fixed;
+top:auto;
+bottom: 120px;
+left:50%;
+transform:translate(-50%) scale(0.8);
+background:white;
+padding:25px 35px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.2);
+text-align:center;
+z-index:2000;
+opacity:0;
+pointer-events:none;
+transition:all 0.5s ease;
+}
+
+.success-popup.show{
+opacity:1;
+transform:translate(-50%,-50%) scale(1.05);
+}
+
+.success-popup i{
+font-size:40px;
+color:#16a34a;
+margin-bottom:10px;
+}
+
+.success-popup h3{
+margin:5px 0;
+color:#0f766e;
+}
+
+.success-popup p{
+font-size:14px;
+color:#555;
+}
+
+.music-btn{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#b48a5a;
+color:white;
+border:none;
+padding:15px;
+border-radius:50%;
+font-size:18px;
+cursor:pointer;
+z-index:999;
+}
+
+.music-player{
+display:flex;
+align-items:center;
+gap:10px;
+margin-top:15px;
+}
+
+.music-player input{
+flex:1;
+}
+
+.music-player button{
+    background:#6B1D2A !important;
+    color:white;
+    border:none;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
+
+.contact-box h4{
+margin-top:15px;
+margin-bottom:10px;
+color:#0f766e;
+}
+
+
+@media (max-width: 480px){
+
+/* container spacing */
+.container{
+padding:30px 15px 140px;
+}
+
+/* title kecil sikit */
+.couple{
+    font-size:22px;
+}
+
+.couple span{
+    font-size:23px;
+}
+
+.couple2-text{
+    font-size:27px;
+}
+
+.bismillah{
+font-size:20px;
+}
+
+/* timer kecil sikit */
+.box{
+width:55px;
+font-size:12px;
+padding:8px;
+}
+
+
+
+/* navbar adjust */
+.navbar{
+gap:15px;
+padding:12px 15px;
+}
+
+.nav-item i{
+font-size:16px;
+}
+
+.nav-item span{
+font-size:10px;
+}
+
+/* circle kecil sikit */
+.circle{
+width:130px;
+height:130px;
+transform: translateY(-60px);
+}
+
+/* modal better fit */
+.modal-content{
+width:90%;
+}
+
+/* ucapan box */
+.ucapan-box{
+padding:15px;
+}
+
+}
+</style>
+
+</head>
+
+<body>
+
+<!-- FLOWERS -->
+
+<script>
+for(let i=0;i<20;i++){
+let flower=document.createElement("div")
+flower.className="flower"
+flower.innerHTML="🌸"
+flower.style.left=Math.random()*100+"%"
+flower.style.animationDuration=(5+Math.random()*5)+"s"
+document.body.appendChild(flower)
+}
+</script>
+
+<!-- COVER -->
+
+<div id="cover" onclick="openInvite()">
+<div class="circle">
+<h2>Aiezad<br>&<br>Najihah</h2>
+<p>Buka</p>
+</div>
+</div>
+
+<div class="container">
+
+<div class="hero">
+
+<div class="bismillah fade">
+بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيم
+</div>
+
+<div class="walimatulurus fade">
+Walimatulurus
+</div>
+
+<h1 class="couple fade">
+Aiezad <span>&</span> Najihah
+</h1>
+
+<div class="date fade">
+Sabtu, 19 Disember 2026
+</div>
+
+</div>
+
+<div class="timer fade">
+<div class="box"><span id="days"></span><br>Hari</div>
+<div class="box"><span id="hours"></span><br>Jam</div>
+<div class="box"><span id="mins"></span><br>Minit</div>
+<div class="box"><span id="secs"></span><br>Saat</div>
+</div>
+
+<div class="fade">
+<p>
+Dengan penuh kesyukuran kami <br><br>
+<strong>
+ROHIDI BIN OTHMAN <br>
+dan <br>
+AZURA BINTI KAMIS
+</strong>
+<br><br>
+menjemput Dato'/ Datin/ Tuan/ Puan/ Encik/ Cik
+<br>
+hadir ke majlis perkahwinan puteri kami
+</p>
+</div>
+
+<h2 class="fade couple2-text">
+    Nurnajihah<br>
+    dan<br>
+    Aiezad Ikmall
+</h2>
+
+<div class="fade">
+  <h3>Tarikh</h3>
+  <p>19 Disember 2026</p>
+</div>
+
+<div class="fade">
+  <h3>Masa</h3>
+  <p>12.00 PM - 4.30 PM</p>
+</div>
+
+<div class="fade">
+  <h3>Lokasi</h3>
+  <p>MES Pegawai Kanan PDRM, Perlis</p>
+</div>
+
+
+<button class="rsvp-btn fade" onclick="openModal('rsvp')">
+RSVP Kehadiran
+</button>
+
+<h2 class="ucapan-title fade">Berikan ucapan untuk pengantin</h2>
+
+<div class="ucapan-box fade">
+<input type="text" id="nama" placeholder="Nama Anda">
+<textarea id="ucapan" placeholder="Berikan ucapan..."></textarea>
+
+</div>
+
+<button class="fade" onclick="hantarUcapan()" style="margin-top:25px;">
+Hantar Ucapan
+</button>
+
+<div id="successPopup" class="success-popup">
+<i class="fas fa-check-circle"></i>
+<h3>Terima Kasih</h3>
+<p>Ucapan anda berjaya dihantar</p>
+</div>
+
+</div>
+
+<!-- NAVBAR -->
+
+<div class="navbar">
+
+<div class="nav-item" onclick="openModal('calendar')">
+<i class="fa-regular fa-calendar"></i>
+<span>Kalendar</span>
+</div>
+
+<div class="nav-item" onclick="openModal('location')">
+<i class="fa-solid fa-location-dot"></i>
+<span>Lokasi</span>
+</div>
+
+<div class="nav-item" onclick="openModal('musicModal')">
+<i class="fa-solid fa-music"></i>
+<span>Lagu</span>
+</div>
+
+<div class="nav-item" onclick="openModal('rsvp')">
+<i class="fa-solid fa-user-check"></i>
+<span>RSVP</span>
+</div>
+
+<div class="nav-item" onclick="openModal('contact')">
+<i class="fa-solid fa-phone"></i>
+<span>Hubungi</span>
+</div>
+
+</div>
+
+<!-- MODALS -->
+
+<div id="calendar" class="modal">
+<div class="modal-content">
+<h3>Tambah tarikh kenduri di kalendar anda</h3>
+<p>Sabtu, 19 Disember 2026 </p>
+<button onclick="window.open('https://calendar.google.com/calendar/render?action=TEMPLATE&text=Kenduri+Kahwin+Najihah+dan+Aiezad&dates=20261219T120000%2F20261219T163000&details=Majlis+Perkahwinan+Najihah+%26+Aiezad&location=MES+Pegawai+Kanan+PDRM,+Perlis&utm_source=chatgpt.com')">
+Google Calendar
+</button>
+
+<button onclick="downloadICS()" style="margin-top:10px">
+Apple Calendar
+</button>
+</div>
+</div>
+
+
+<div id="location" class="modal">
+  <div class="modal-content">
+    <h3>Lokasi</h3>
+    <p>MES Pegawai Kanan PDRM, Perlis</p>
+
+    <button onclick="window.open('https://maps.app.goo.gl/RVW7iV7PZxAw3VZo8', '_blank')">
+      Google Maps
+    </button>
+  </div>
+</div>
+
+
+<div id="rsvp" class="modal">
+<div class="modal-content">
+
+<div id="rsvpSuccess" class="success-popup">
+  <i class="fas fa-check-circle"></i>
+  <h3>Terima Kasih</h3>
+  <p>RSVP berjaya dihantar 💐</p>
+</div>
+
+<h3 class="rsvp-title">RSVP Kehadiran</h3>
+
+<div class="rsvp-form">
+
+<label>Nama</label>
+<input type="text" id="rsvpNama" placeholder="Nama anda">
+
+<label>Bilangan Kehadiran</label>
+<input type="number" id="rsvpBilangan" placeholder="Contoh: 2" min="1" step="1" required>
+
+<label>Status Kehadiran</label>
+<select id="rsvpStatus" required>
+  <option value="">-- Pilih Status --</option>
+  <option value="Hadir">Hadir</option>
+  <option value="Tidak Hadir">Tidak Hadir</option>
+</select>
+
+<p id="rsvpMsg" style="margin-top:15px;color:green;font-weight:600;"></p>
+
+<button class="rsvp-submit" id="rsvpBtn" onclick="submitRSVP()">
+Hantar Kehadiran
+</button>
+
+</div>
+
+</div>
+</div>
+
+
+<div id="contact" class="modal">
+  <div class="modal-content">
+
+    <h3>Hubungi Kami</h3>
+
+    <div class="contact-box">
+
+      <h4>ROHIDI</h4>
+      <a href="tel:0124346570">
+        <button style="width:100%;margin-bottom:20px">
+          <i class="fa-solid fa-phone"></i> Call
+        </button>
+      </a>
+
+      <h4>AZURA</h4>
+      <a href="tel:0125707789">
+        <button style="width:100%;margin-bottom:10px">
+          <i class="fa-solid fa-phone"></i> Call
+        </button>
+      </a>
+      <a href="https://wa.me/60125707789">
+        <button style="width:100%;margin-bottom:20px;background:#25D366">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </button>
+      </a>
+
+      <h4>HAFIZ</h4>
+      <a href="tel:0143285870">
+        <button style="width:100%;margin-bottom:10px">
+          <i class="fa-solid fa-phone"></i> Call
+        </button>
+      </a>
+      <a href="https://wa.me/60143285870">
+        <button style="width:100%;margin-bottom:20px;background:#25D366">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </button>
+      </a>
+
+      <h4>AINA</h4>
+      <a href="tel:0137290410">
+        <button style="width:100%;margin-bottom:10px">
+          <i class="fa-solid fa-phone"></i> Call
+        </button>
+      </a>
+      <a href="https://wa.me/60137290410">
+        <button style="width:100%;margin-bottom:20px;background:#25D366">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </button>
+      </a>
+
+      <h4>ALISHA</h4>
+      <a href="tel:01140679040">
+        <button style="width:100%;margin-bottom:10px">
+          <i class="fa-solid fa-phone"></i> Call
+        </button>
+      </a>
+      <a href="https://wa.me/601140679040">
+        <button style="width:100%;background:#25D366">
+          <i class="fa-brands fa-whatsapp"></i> WhatsApp
+        </button>
+      </a>
+
+    </div>
+
+  </div>
+</div>
+
+<audio id="bgMusic" loop>
+<source src="audio.mp3" type="audio/mpeg">
+</audio>
+
+<!-- MUSIC MODAL -->
+<div id="musicModal" class="modal">
+<div class="modal-content">
+
+<h3>🎶 Lagu </h3>
+
+<p>Beautiful in White x Canon in D (Piano Cover by Riyandi Kusuma)</p>
+
+<div class="music-player">
+<button onclick="toggleMusic()" id="playBtn">
+<i class="fas fa-pause"></i>
+</button>
+
+<span id="currentTime">0:00</span>
+
+<input type="range" id="progress" value="0">
+
+<span id="duration">0:00</span>
+</div>
+
+
+</div>
+</div>
+
+<script>
+
+function openInvite(){
+  document.getElementById("cover").classList.add("hide");
+
+  const music = document.getElementById("bgMusic");
+  music.muted = true;
+  music.play().then(()=>{
+    music.muted = false;
+  }).catch(()=>{});
+}
+
+
+
+function openModal(id){
+document.getElementById(id).style.display="flex"
+}
+
+window.onclick=function(e){
+if(e.target.classList.contains('modal')){
+e.target.style.display="none"
+}
+}
+
+
+function showSuccess(text){
+
+const popup = document.getElementById("successPopup")
+
+popup.querySelector("p").textContent = text
+
+popup.classList.add("show")
+
+if(navigator.vibrate){
+  navigator.vibrate
+}
+
+setTimeout(()=>{
+popup.classList.remove("show")
+},4000)
+
+}
+
+function showRSVPSuccess(){
+
+const popup = document.getElementById("rsvpSuccess")
+
+popup.classList.add("show")
+
+setTimeout(()=>{
+popup.classList.remove("show")
+},4000)
+
+}
+
+
+
+window.addEventListener('load', () => {
+document.querySelectorAll('.fade').forEach(el=>{
+const rect = el.getBoundingClientRect();
+if(rect.top < window.innerHeight){
+el.classList.add('show');
+}
+});
+});
+
+function changeSong(select){
+var player=document.getElementById("player")
+player.src=select.value
+player.play()
+}
+
+var target=new Date("December 19, 2026 12:00:00").getTime()
+
+setInterval(function(){
+
+var now=new Date().getTime()
+var diff=target-now
+
+document.getElementById("days").innerHTML=Math.floor(diff/(1000*60*60*24))
+document.getElementById("hours").innerHTML=Math.floor((diff%(1000*60*60*24))/(1000*60*60))
+document.getElementById("mins").innerHTML=Math.floor((diff%(1000*60*60))/(1000*60))
+document.getElementById("secs").innerHTML=Math.floor((diff%(1000*60))/1000)
+
+},1000)
+
+const faders = document.querySelectorAll('.fade');
+
+window.addEventListener('scroll', () => {
+faders.forEach(el => {
+const rect = el.getBoundingClientRect();
+if(rect.top < window.innerHeight - 50){
+el.classList.add('show');
+}
+});
+});
+
+function hantarUcapan(){
+
+var nama=document.getElementById("nama").value
+var ucapan=document.getElementById("ucapan").value
+
+const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSf7kWN82xYKHFWm0ghbw5ikaKgxqcxlJlbiZue7I6L807akNw/formResponse";
+
+const data = new FormData();
+
+data.append("entry.931330102", nama);
+data.append("entry.1492625233", ucapan);
+
+fetch(formURL,{
+method:"POST",
+mode:"no-cors",
+body:data
+})
+
+.then(()=>{
+
+showSuccess("Ucapan anda berjaya dihantar 💌")
+
+document.getElementById("nama").value=""
+document.getElementById("ucapan").value=""
+
+})
+
+}
+
+
+
+
+
+
+const music = document.getElementById("bgMusic");
+const playBtn = document.getElementById("playBtn");
+const progress = document.getElementById("progress");
+const currentTime = document.getElementById("currentTime");
+const duration = document.getElementById("duration");
+
+function openMusic(){
+document.getElementById("musicModal").style.display="block";
+}
+
+function toggleMusic(){
+if(music.paused){
+music.play();
+playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+}else{
+music.pause();
+playBtn.innerHTML = '<i class="fas fa-play"></i>';
+}
+}
+
+music.addEventListener("timeupdate", () =>{
+progress.value = (music.currentTime / music.duration) * 100;
+
+let minutes = Math.floor(music.currentTime / 60);
+let seconds = Math.floor(music.currentTime % 60);
+
+if(seconds < 10) seconds = "0" + seconds;
+
+currentTime.textContent = minutes + ":" + seconds;
+});
+
+music.addEventListener("loadedmetadata", () =>{
+let minutes = Math.floor(music.duration / 60);
+let seconds = Math.floor(music.duration % 60);
+
+duration.textContent = minutes + ":" + seconds;
+});
+
+progress.addEventListener("input", ()=>{
+music.currentTime = (progress.value / 100) * music.duration;
+});
+
+
+function downloadICS(){
+
+
+const icsContent = `BEGIN:VCALENDAR
+VERSION:2.0
+BEGIN:VEVENT
+SUMMARY:Kenduri Kahwin Najihah dan Aiezad
+DTSTART:20261219T120000
+DTEND:20261219T163000
+LOCATION:MES Pegawai Kanan PDRM, Perlis
+DESCRIPTION:Majlis Perkahwinan Najihah dan Aiezad
+END:VEVENT
+END:VCALENDAR`;
+
+
+const blob = new Blob([icsContent], { type: 'text/calendar' });
+const link = document.createElement('a');
+
+link.href = URL.createObjectURL(blob);
+link.download = "kenduri.ics";
+link.click();
+}
+
+ 
+function submitRSVP(){
+
+const nama = document.getElementById("rsvpNama").value
+const bilangan = document.getElementById("rsvpBilangan").value
+const status = document.getElementById("rsvpStatus").value
+
+const msg = document.getElementById("rsvpMsg")
+const btn = document.getElementById("rsvpBtn")
+
+if(!nama || !bilangan || !status){
+msg.style.color="red"
+msg.textContent="Sila lengkapkan semua maklumat"
+return
+}
+
+btn.disabled=true
+btn.textContent="Menghantar..."
+
+const formURL = "https://docs.google.com/forms/d/e/1FAIpQLSfzLl2v4BNzAx0HbxS9y-EJJXF6w3yvK7IoVwWxi8vZPtycpA/formResponse";
+const data = new FormData()
+
+data.append("entry.50809081", nama);
+data.append("entry.774435415", bilangan);
+data.append("entry.605689383", status);
+
+fetch(formURL,{
+method:"POST",
+mode:"no-cors",
+body:data
+})
+
+.then(()=>{
+
+
+
+btn.textContent="Dihantar ✔"
+btn.style.background="#16a34a"
+
+document.getElementById("rsvpNama").value=""
+document.getElementById("rsvpBilangan").value=""
+document.getElementById("rsvpStatus").value=""
+
+setTimeout(()=>{
+document.getElementById("rsvp").style.display="none"
+},4000)
+
+showRSVPSuccess()
+
+})
+.catch(()=>{
+
+msg.style.color="red"
+msg.textContent="Gagal hantar"
+
+btn.disabled=false
+btn.textContent="Hantar Kehadiran"
+
+})
+
+}
+  
+function lockRSVP(){
+var btn=document.getElementById("rsvpBtn")
+var msg=document.getElementById("rsvpMsg")
+
+btn.disabled=true
+btn.textContent="Telah dihantar ✔"
+btn.style.opacity="1"
+btn.style.background="#16a34a"
+
+msg.style.color="lightgreen"
+msg.textContent="RSVP anda telah direkodkan"
+}
+
+
+
+
+</script>
+
+</body>
+</html>
+
