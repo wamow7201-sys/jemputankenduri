@@ -415,6 +415,56 @@ margin-top:10px;
     width:auto;
 }
 
+
+/* UCAPAN CONTAINER */
+
+.ucapan-container{
+    background:rgba(107,29,42,0.3);
+    padding:25px;
+    border-radius:15px;
+    margin-top:35px;
+    border:1px solid rgba(255,255,255,0.3);
+}
+
+.ucapan-container h2{
+    color:#6B1D2A;
+    margin-bottom:12px;
+}
+
+.ucapan-container p{
+    color:#480210;
+    font-size:14px;
+    line-height:1.7;
+}
+
+/* UCAPAN FORM */
+
+.ucapan-container .ucapan-box{
+    background:transparent;
+    border:none;
+    padding:0;
+    margin-top:20px;
+}
+
+.ucapan-container .ucapan-submit{
+    width:auto;
+    min-width:180px;
+    padding:12px 30px;
+    margin-top:10px;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+@media (max-width:480px){
+
+    .ucapan-container{
+        padding:15px;
+    }
+
+}
+
+
 .rsvp-title{
 margin-bottom:20px;
 color:var(--teal);
@@ -838,17 +888,30 @@ hadir ke majlis perkahwinan puteri kami
 
 </div>
 
-<h2 class="ucapan-title fade">Berikan ucapan untuk pengantin</h2>
+<div class="ucapan-container fade">
 
-<div class="ucapan-box fade">
-<input type="text" id="nama" placeholder="Nama Anda">
-<textarea id="ucapan" placeholder="Berikan ucapan..."></textarea>
+    <h2>💐 Berikan Ucapan Untuk Pengantin</h2>
+
+    <p>
+        Tinggalkan ucapan dan doa anda buat
+        pasangan pengantin sebagai tanda ingatan
+        dan kasih sayang.
+    </p>
+
+    <div class="ucapan-box">
+
+        <input type="text" id="nama" placeholder="Nama Anda">
+
+        <textarea id="ucapan" placeholder="Tuliskan ucapan anda..."></textarea>
+
+        <button class="ucapan-submit" onclick="hantarUcapan()">
+            <i class="fas fa-paper-plane"></i>
+            Hantar Ucapan
+        </button>
+
+    </div>
 
 </div>
-
-<button class="ucapan-submit fade" onclick="hantarUcapan()" style="margin-top:25px;">
-    Hantar Ucapan
-</button>
 
 <div id="successPopup" class="success-popup">
 <i class="fas fa-check-circle"></i>
