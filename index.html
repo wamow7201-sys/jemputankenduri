@@ -389,7 +389,31 @@ margin-top:10px;
     box-shadow:0 3px 8px rgba(60, 0, 15, 0.3);
 }
 
+/* RSVP BOX */
 
+.rsvp-box{
+    background:rgba(107,29,42,0.3);
+    padding:25px;
+    border-radius:15px;
+    margin-top:35px;
+    border:1px solid rgba(255,255,255,0.3);
+}
+
+.rsvp-box h2{
+    color:#6B1D2A;
+    margin-bottom:12px;
+}
+
+.rsvp-box p{
+    color:#480210;
+    font-size:14px;
+    line-height:1.7;
+}
+
+.rsvp-box .rsvp-btn{
+    margin-top:15px;
+    width:auto;
+}
 
 .rsvp-title{
 margin-bottom:20px;
@@ -796,9 +820,23 @@ hadir ke majlis perkahwinan puteri kami
 </div>
 
 
-<button class="rsvp-btn fade" onclick="openModal('rsvp')">
-Isi Kehadiran
-</button>
+<div class="rsvp-box fade">
+
+    <h2>💌 Pengesahan Kehadiran</h2>
+
+    <p>
+        Mohon klik butang <strong>Isi Kehadiran</strong>
+        di bawah untuk mengesahkan kehadiran anda
+        ke majlis kami.
+        Terima kasih atas kerjasama anda!
+    </p>
+
+    <button class="rsvp-btn" onclick="openModal('rsvp')">
+        <i class="fas fa-calendar-check"></i>
+        Isi Kehadiran
+    </button>
+
+</div>
 
 <h2 class="ucapan-title fade">Berikan ucapan untuk pengantin</h2>
 
